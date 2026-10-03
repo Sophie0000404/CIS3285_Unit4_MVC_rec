@@ -7,13 +7,10 @@ namespace Unit4_MVC_rec.Models
     public class StudentModel
     {
         [Key]
-        [Range(1, int.MaxValue)]
         public int Id { get; set; }
-
         [Required]
         public string Name { get; set; }
 
-        [Range(0, int.MaxValue)]
         public int Credits { get; set; }
 
         public StudentModel()
