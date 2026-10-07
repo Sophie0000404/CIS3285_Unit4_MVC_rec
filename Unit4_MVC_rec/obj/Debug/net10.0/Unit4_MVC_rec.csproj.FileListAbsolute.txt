@@ -103,3 +103,4 @@ C:\Users\tgibbons\AppData\Local\Temp\Unit4_MVC_rec-build\Unit4_MVC_rec.deps.json
 C:\Users\tgibbons\AppData\Local\Temp\Unit4_MVC_rec-build\Unit4_MVC_rec.runtimeconfig.json
 C:\Users\tgibbons\AppData\Local\Temp\Unit4_MVC_rec-build\Unit4_MVC_rec.dll
 C:\Users\tgibbons\AppData\Local\Temp\Unit4_MVC_rec-build\Unit4_MVC_rec.pdb
+C:\Users\tgibbons\Documents\CIS 3285 SW Design\Unit4_MVC_rec\Unit4_MVC_rec\obj\Debug\net10.0\Unit4_MVC_rec.sourcelink.json

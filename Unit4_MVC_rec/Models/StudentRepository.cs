@@ -39,7 +39,25 @@ namespace Unit4_MVC_rec.Models
 
         public StudentModel? getStudentById(int id)
         {
-            return myStudents.Find(student => student.Id == id);
+            // return myStudents.Find(student => student.Id == id);
+            // Console.WriteLine("Getting student with id = " + id);
+            foreach (StudentModel student in myStudents)
+            {
+                if (student.Id == id)
+                {
+                    return (student);
+                }
+            }
+            // if you can't find the correct student return the first one
+            return (nullStudent());
+
+        }
+
+        private StudentModel nullStudent()
+        {
+            // create a null student
+            StudentModel nullStudent = new StudentModel(-1, "Null Student", -999);
+            return nullStudent;
         }
 
 
@@ -75,6 +93,6 @@ namespace Unit4_MVC_rec.Models
             }
         }
     }
-    }
+}
 
 
