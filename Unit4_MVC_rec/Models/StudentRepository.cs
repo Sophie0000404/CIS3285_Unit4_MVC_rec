@@ -39,15 +39,7 @@ namespace Unit4_MVC_rec.Models
                 }
             }
             // if you can't find the correct student return the first one
-            return (nullStudent());
-
-        }
-
-        private IStudentInterface nullStudent()
-        {
-            // create a null student
-            IStudentInterface nullStudent = new StudentModel(-1, "Null Student", -999);
-            return nullStudent;
+            return new NullStudent();
         }
 
 
@@ -85,4 +77,3 @@ namespace Unit4_MVC_rec.Models
     }
 
 }
-
