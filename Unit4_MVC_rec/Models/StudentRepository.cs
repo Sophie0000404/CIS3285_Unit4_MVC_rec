@@ -3,21 +3,11 @@ using System.Collections.Generic;
 
 namespace Unit4_MVC_rec.Models
 {
-    public interface IStudentCRUDInterface
-    {
-        List<StudentModel> getAllStudents();
-        StudentModel? getStudentById(int id);
-        StudentModel getOneStudent(int index);
-        void AddStudent(StudentModel newStudent);
-        void DeleteStudent(int studentId);
-        void UpdateStudent(int studentId, StudentModel updatedStudent);
-    }
-
     public class StudentRepository : IStudentCRUDInterface
     {
 
         //DEBT -- this should be accessing a database
-        static List<StudentModel> myStudents = new List<StudentModel>();
+        static List<IStudentInterface> myStudents = new List<IStudentInterface>();
 
         public StudentRepository()
         {
@@ -31,17 +21,17 @@ namespace Unit4_MVC_rec.Models
 
         }
 
-        public List<StudentModel> getAllStudents()
+        public List<IStudentInterface> getAllStudents()
         {
             return myStudents;
         }
 
 
-        public StudentModel? getStudentById(int id)
+        public IStudentInterface? getStudentById(int id)
         {
             // return myStudents.Find(student => student.Id == id);
             // Console.WriteLine("Getting student with id = " + id);
-            foreach (StudentModel student in myStudents)
+            foreach (IStudentInterface student in myStudents)
             {
                 if (student.Id == id)
                 {
@@ -53,20 +43,20 @@ namespace Unit4_MVC_rec.Models
 
         }
 
-        private StudentModel nullStudent()
+        private IStudentInterface nullStudent()
         {
             // create a null student
-            StudentModel nullStudent = new StudentModel(-1, "Null Student", -999);
+            IStudentInterface nullStudent = new StudentModel(-1, "Null Student", -999);
             return nullStudent;
         }
 
 
 
-        public StudentModel getOneStudent(int index)
+        public IStudentInterface getOneStudent(int index)
         {
             return (myStudents[index]);
         }
-        public void AddStudent(StudentModel newStudent)
+        public void AddStudent(IStudentInterface newStudent)
         {
             myStudents.Add(newStudent);
         }
@@ -82,7 +72,7 @@ namespace Unit4_MVC_rec.Models
             }
         }
 
-        public void UpdateStudent(int studentId, StudentModel updatedStudent)
+        public void UpdateStudent(int studentId, IStudentInterface updatedStudent)
         {
             // search the list for the student that matches the student ID
             // DEBT --- Handle case when student id not found and index is -1
@@ -93,6 +83,6 @@ namespace Unit4_MVC_rec.Models
             }
         }
     }
-}
 
+}
 

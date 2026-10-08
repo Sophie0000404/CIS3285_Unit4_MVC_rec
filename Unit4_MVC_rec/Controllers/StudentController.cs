@@ -20,7 +20,7 @@ namespace Unit4_MVC_rec.Controllers
 
         public IActionResult Details(int id)
         {
-            StudentModel? student = studentRepo.getStudentById(id);
+            IStudentInterface? student = studentRepo.getStudentById(id);
             if (student == null)
             {
                 return NotFound();
@@ -45,7 +45,7 @@ namespace Unit4_MVC_rec.Controllers
 
         public IActionResult Edit(int id)
         {
-            StudentModel? student = studentRepo.getStudentById(id);
+            IStudentInterface? student = studentRepo.getStudentById(id);
             if (student == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace Unit4_MVC_rec.Controllers
 
         public IActionResult Delete(int id)
         {
-            StudentModel? student = studentRepo.getStudentById(id);
+            IStudentInterface? student = studentRepo.getStudentById(id);
             if (student == null)
             {
                 return NotFound();
