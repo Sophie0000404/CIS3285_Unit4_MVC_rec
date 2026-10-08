@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Mvc;
 using Unit4_MVC_rec.Models;
 
@@ -36,15 +37,7 @@ namespace Unit4_MVC_rec.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(StudentModel student)
         {
-            if (studentRepo.getStudentById(student.Id) != null)
-            {
-                ModelState.AddModelError(nameof(student.Id), "A student with this ID already exists.");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return View(student);
-            }
+            
 
             studentRepo.AddStudent(student);
             return RedirectToAction(nameof(Index));
